@@ -1,6 +1,6 @@
-(defproject lein-datomic "0.1.0-SNAPSHOT"
-  :description "FIXME: write description"
-  :url "http://example.com/FIXME"
+(defproject lein-datomic "0.1.0"
+  :description "Leiningen plugin for various Datomic tasks."
+  :url "http://github.com/johnwayner/lein-datomic"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :eval-in-leiningen true

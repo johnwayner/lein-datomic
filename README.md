@@ -4,9 +4,9 @@ This is a very basic Leiningen plugin to start a Datomic transactor and (re-)ini
 
 ## Usage
 
-Put `[lein-datomic "0.1.0-SNAPSHOT"]` into the `:plugins` vector of your
+Put `[lein-datomic "0.1.0]` into the `:plugins` vector of your
 `:user` profile, or if you are on Leiningen 1.x do `lein plugin install
-lein-datomic 0.1.0-SNAPSHOT`.
+lein-datomic 0.1.0`.
 
 You will need to download a zip from
 [Datomic](http://www.datomic.com/get-datomic.html) 
