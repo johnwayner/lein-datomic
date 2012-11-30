@@ -68,7 +68,7 @@
     (println "Database initialized.")))
 
 (defn datomic
-  "I don't do a lot."
+  "Various tasks related to using Datomic."
   {:subtasks [#'start #'initialize]}
   [project sub-task & args]
   (case sub-task
