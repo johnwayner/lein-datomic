@@ -22,8 +22,8 @@ key to a map with an :install-location like so:
 In your project, add a configuration like:
 
     (defproject ...
-      :datomic {:schemas ["resources/schema" ["my-schema.dtm"
-                                              "initial-data.dtm"]]}
+      :datomic {:schemas ["resources/schema" ["my-schema.edn"
+                                              "initial-data.edn"]]}
       :profiles {:dev
                  {:datomic {:config "resources/free-transactor-template.properties"
                             :db-uri "datomic:free://localhost:4334/my-db"}}})
