@@ -33,6 +33,10 @@ Now you're ready to start a transactor and load up your schemas and initial data
     $ lein datomic start &
     $ lein datomic initialize   #this requires a running transactor
 
+### Optional Configuration
+
+* `:exe-prefix "datomic-"` (Mac/Homebrew specific): Prefix datomic executable names with the given string
+
 ## License
 
 Copyright © 2012 Wayne Rittimann, Jr.

@@ -4,11 +4,19 @@
   (:import java.io.File))
 
 
+(defn- prefix-str
+  "Prefixes a string"
+  [s prefix]
+  (if (nil? prefix)
+    s
+    (str prefix s)))
+
 (defn start
   "Start a Datomic instance as specified in project.clj."
-  [root {:keys [install-location config db-uri test-data]}]
+  [root {:keys [install-location config db-uri test-data exe-prefix]}]
   (if config 
-    (let [p (sh/proc "bin/transactor" (str root File/separator config)
+    (let [p (sh/proc (str "bin/" (prefix-str "transactor" exe-prefix))
+                     (str root File/separator config)
                      :dir install-location)]
       (while true (try
                     (sh/stream-to-out p :out)
