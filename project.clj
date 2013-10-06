@@ -1,4 +1,4 @@
-(defproject lein-datomic "0.2.0"
+(defproject lein-datomic "0.2.1"
   :description "Leiningen plugin for various Datomic tasks."
   :url "http://github.com/johnwayner/lein-datomic"
   :license {:name "Eclipse Public License"
