@@ -7,7 +7,7 @@
 (defn start
   "Start a Datomic instance as specified in project.clj."
   [root {:keys [install-location config db-uri test-data]}]
-  (if config 
+  (if config
     (let [p (sh/proc "bin/transactor" (str root File/separator config)
                      :dir install-location)]
       (while true (try
@@ -23,7 +23,7 @@
      (string? schemas) (vector schemas)
      (vector? schemas) (apply concat
                               (for [dir-pair (partition 2 schemas)]
-                                (let [[base-dir file-names] dir-pair 
+                                (let [[base-dir file-names] dir-pair
                                       schema-dir (File. (str (:root project)
                                                              File/separator base-dir))]
                                   (for [file-name file-names]
@@ -42,9 +42,8 @@
              ~@(for [schema-file (schema-paths project)]
                  `(do
                     (println ~(str "Loading " schema-file "..."))
-                    (datomic.api/transact
-                     ~conn
-                     (read-string (slurp ~schema-file))))))
+                    (doseq [txd# (datomic.Util/readAll (clojure.java.io/reader ~schema-file))]
+                      (datomic.api/transact ~conn txd#)))))
 
            (catch Exception e#
              (.printStackTrace e#))
